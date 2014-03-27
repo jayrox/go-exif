@@ -544,7 +544,9 @@ func (self *ExifData) ProcessExifStream(f *os.File) {
 	data, err := self.GetExifData(f)
 
 	if err != nil {
-		log.Fatal(err)
+		// log.Fatal(err)
+		log.Println("EXIF Err: ", err)
+		return
 	}
 
 	var tiff TiffInterface = &TiffData{}
